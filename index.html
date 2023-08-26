@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air-Ticketer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Header Section  -->
+  <nav class="navbar navbar-expand-lg w-100">
+    <div class="ATcontainer d-flex justify-content-between">
+      <div class="navbarLogo">
+        <a class="navbar-brand" href="#">
+          <img class="mt-0 position-absolute" src="./assets/airticketer_logo.png" alt="Air Ticketer">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-dark"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">More</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex align-items-center justify-content-center" id="navbarLoginContent">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            IND
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link loginLink" aria-current="page" href="./login.html">Login/Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- plan your trip Banner Section -->
+  <div class="planYourTripSection mb-5">
+    <div class="ATcontainer d-flex flex-column flex-lg-row mb-5 position-relative justify-content-between">
+      <div class="row w-100 m-0">
+        <div class="col-12 col-sm-6">
+          <div class="section_Heading">
+            <h1>Plan Your
+              <span class="highText">Trip</span>
+            </h1>
+          </div>
+          <!-- Filter section  -->
+          <div class="cityFilter d-flex w-100">
+            <div class="form-check d-flex gap-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                One Way
+              </label>
+            </div>
+            <div class="form-check d-flex ms-3 gap-1">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Round Trip
+              </label>
+            </div>
+            <div class="form-check d-flex ms-3 gap-1">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault3">
+                Multi-city
+              </label>
+            </div>
+          </div>
+
+          <!-- city form section  -->
+          <div class="cityFilterAdd w-100">
+            <div class="d-flex flex-column gap-3 w-100">
+
+              <div class="w-100 d-flex flex-column flex-sm-row justify-content-between gap-1 position-relative">
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">From</div>
+                  <div class="inputFrom p-1">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Type Departure City"
+                      required>
+                  </div>
+                </div>
+
+                <div class="flight_change">
+                  <img src="./assets/progress-arrows_icn_filter.png" alt="">
+                </div>
+
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">To</div>
+                  <div class="inputFrom">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Type Departure City"
+                      required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-100 d-flex flex-column flex-sm-row justify-content-between gap-2">
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">Depart</div>
+                  <div class="inputFrom p-1">
+                    <input type="date" class="form-control" id="validationCustom01" placeholder="14-07-2023" required>
+                  </div>
+                </div>
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">Return</div>
+                  <div class="inputFrom">
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Return Date" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-100 d-flex flex-column flex-sm-row justify-content-between gap-2 me-0">
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">Traveller</div>
+                  <div class="inputFrom p-1 d-flex justify-content-between">
+                    <form class="personAddForm d-flex flex-column">
+                      <span>Adult</span>
+                      <div>
+                        <div class="value-button text-center" id="decrease" onclick="decreaseValue()"
+                          value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" />
+                        <div class="value-button text-center" id="increase" onclick="increaseValue()"
+                          value="Increase Value">+</div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="formBox col-12 col-sm-6 p-1">
+                  <div class="labelFrom text-uppercase">Cabin class</div>
+                  <div class="inputFrom dropdown text-start">
+                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Premimum Economy
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row w-100 d-flex flex-column flex-sm-row justify-content-between ms-0">
+                <div class="col-12 col-sm-6 p-1">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                      Preffered Airline
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Indigo</a></li>
+                      <li><a class="dropdown-item" href="#">Air Asia</a></li>
+                      <li><a class="dropdown-item" href="#">Akasha</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <button class="btn searchBtn">Search flight</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- Banner Carousel section  -->
+        <div class="bannerCarousel col-12 col-sm-6 mt-5">
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active text-dark" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/Banner 1.jpg" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/banner_2.jpeg" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/banner_3.jpeg" class="d-block w-100">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Best Deals Section -->
+
+  <section class="bestDeals ATcontainer mb-5">
+    <div class="sectionHeading text-center">
+      <h2 class="text-center">Find
+        <span class="highText text-center">Best Deals</span>
+      </h2>
+      <p>Explore the top deals with Airtickter</p>
+    </div>
+    <div class="w-100 d-flex gap-3 justify-content-between">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./assets/BestDealCardImg_1.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="./assets/BestDealCardImg_2.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exploring world section  -->
+  <section class="exploringWorld">
+    <div class="ATcontainer">
+      <div class="sectionHeading text-center">
+        <h2>
+          <span class="highText">Exploring</span>
+          the World in Comfort with Travel
+        </h2>
+
+      </div>
+      <div class="sectionCards d-flex justify-content-between gap-3">
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <!-- <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div> -->
+        <!-- <div class="card" style="width: 18rem;">
+          <img src="./assets/ExploringWorldCardImg_2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Hotel Section  -->
+  <section class="topHotelsSection w-100">
+    <div class="ATcontainer">
+      <div class="">
+        <h2>Top
+          <span class="highText">Hotel</span>
+          Destination
+        </h2>
+        <span class="sub-text text-start w-50">Discuss your goals determines success metrics identity solution Discuss
+          your goals determines success metrics
+          identity solution Discuss your goals</span>
+      </div>
+
+      <div class="topHotelCardSection d-flex gap-3 justify-content-between">
+        <div class="card">
+          <img src="./assets/HotelCard-1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn primary_btn">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assets/HotelCard-2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn primary_btn">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assets/HotelCard-3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn primary_btn">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Air Ticketer -->
+  <section class="whyAirTicketer d-flex w-100">
+    <div class="ATcontainer">
+      <div class="sectionHeading text-center">
+        <h2>Why
+          <span class="highText">Air</span>
+          Ticketer
+        </h2>
+        <span class="sub-text text-center">Discuss your goals determines success metrics identity solution</span>
+      </div>
+
+      <div class="whyAirTicketerCard d-flex justify-content-between gap-3">
+        <div class="card" style="width: 18rem;">
+          <div class="WAcard_img">
+            <img src="./assets/best-services.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="WAcard_img">
+            <img src="./assets/amazing-deals.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="WAcard_img">
+            <img src="./assets/affordable-pricing.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="WAcard_img">
+            <img src="./assets/satisfaction.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Airline Partner section  -->
+  <section class="ourAirlinePartnersection d-flex w-100">
+    <div class="ATcontainer">
+      <div class="sectionHeading text-center d-block">
+        <h2>Our
+          <span class="highText">Airline</span>
+          Partner
+        </h2>
+        <span class="sub-text text-center w-50">Our Partners is our main contractor, it will work with your business
+          plan to develop a custom offers & deals for you</span>
+      </div>
+
+      <div class="ourAirlinePartnersectionCard d-flex justify-content-between gap-3">
+        <div class="card airline_item">
+          <div class="airline_logo"></div>
+          <img src="./assets/top-dest-airline-1.jpeg" class="card-img-top">
+        </div>
+        <div class="card airline_item">
+          <div class="airline_logo"></div>
+          <img src="./assets/top-dest-airline-2.jpeg" class="card-img-top">
+        </div>
+        <div class="card airline_item">
+          <div class="airline_logo"></div>
+          <img src="./assets/top-dest-airline-3.png" class="card-img-top">
+        </div>
+        <div class="card airline_item">
+          <div class="airline_logo"></div>
+          <img src="./assets/top-dest-airline-4.png" class="card-img-top">
+        </div>
+        <div class="card airline_item">
+          <div class="airline_logo"></div>
+          <img src="./assets/top-dest-airline-5.png" class="card-img-top">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newlatter Section  -->
+  <section class="newsLatterSection">
+    <div class="ATcontainer">
+      <div class="sectionHeading">
+        <h5>THE WORLD OF AIR TICKTER</h5>
+        <h2>Want to receive exclusive discounts and updates straight to your inbox?</h2>
+      </div>
+
+      <div class="newsLatterForm">
+        <div class="signUpForm">
+          <div class="formInput w-100">
+            <input class="form-control ip_subscribe" type="text" name="email" placeholder="Your Email" required>
+          </div>
+          <button type="submit" class="btn btn_sub subsbtn w-50">Subscribe With Email</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer Section  -->
+  <footer>
+    <div class="ATfooter">
+      <div class="ATcontainer d-flex">
+        <div class="QLinks col-3">
+          <div class="footerContent">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="supportLinks col-3">
+          <div class="footerContent">
+            <h4>Support and Help</h4>
+            <ul>
+              <li><a href="">Privacy and Policy</a></li>
+              <li><a href="">FAQ</a></li>
+              <li><a href="">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="partner col-3">
+          <div class="footerContent">
+            <h4>Partner With Us</h4>
+            <ul>
+              <li><a href="">Become an Agent</a></li>
+              <li><a href="">User Agreement</a></li>
+              <li><a href="">Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="socialLinks col-3">
+          <div class="footerContent">
+            <h4>Keep in Touch</h4>
+            <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+            </ul>
+            <div class="keepInTouch">
+              <div class="keepInTouchImg"></div>
+              <div class="keepInTouchText text-light">
+                <p>24×7 Customer Support</p>
+                <span>1800-313-5699</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btmFooter pb-3">
+      <div class="ATcontainer d-flex justify-content-between">
+        <div class="footerLogo">
+          <a href="#">
+            <img class="mt-0 position-absolute" src="./assets/airticketer_logo.png" alt="Air Ticketer">
+          </a>
+        </div>
+        <div class="copyright text-light">© Copyright 2023 by Air Tickter.
+          <br> All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
